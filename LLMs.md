@@ -24,7 +24,7 @@ The library automatically handles proper placement during rendering.
 ## Installation
 
 ```bash
-go get maragu.dev/gomponents
+go get github.com/x07-it/gomps
 ```
 
 ## Import Patterns
@@ -33,9 +33,9 @@ go get maragu.dev/gomponents
 Contrary to common idiomatic Go, dot imports are the recommended approach for gomponents as they make the code read like a DSL for HTML:
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
-    . "maragu.dev/gomponents/components"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
+    . "github.com/x07-it/gomps/components"
 )
 ```
 
@@ -43,16 +43,16 @@ import (
 For those who prefer avoiding dot imports, use single-letter aliases:
 ```go
 import (
-    g "maragu.dev/gomponents"
-    h "maragu.dev/gomponents/html"
-    c "maragu.dev/gomponents/components"
-    ghttp "maragu.dev/gomponents/http"
+    g "github.com/x07-it/gomps"
+    h "github.com/x07-it/gomps/html"
+    c "github.com/x07-it/gomps/components"
+    ghttp "github.com/x07-it/gomps/http"
 )
 ```
 
 ## Package Structure
 
-### maragu.dev/gomponents (core)
+### github.com/x07-it/gomps (core)
 Core interfaces and helper functions:
 - `Node` interface
 - `El(name string, children ...Node)` - create custom elements
@@ -66,18 +66,18 @@ Core interfaces and helper functions:
 - `If(condition bool, node Node)` - conditional rendering
 - `Iff(condition bool, func() Node)` - lazy conditional rendering
 
-### maragu.dev/gomponents/html
+### github.com/x07-it/gomps/html
 All HTML5 elements and attributes as Go functions:
 - Elements: `Div()`, `Span()`, `A()`, `H1()`, etc.
 - Attributes: `Class()`, `ID()`, `Href()`, `Style()`, etc.
 - Special: `Doctype()` for HTML5 doctype declaration
 
-### maragu.dev/gomponents/components
+### github.com/x07-it/gomps/components
 Higher-level components:
 - `HTML5(HTML5Props)` - complete HTML5 document structure
 - `Classes` - dynamic class management map
 
-### maragu.dev/gomponents/http
+### github.com/x07-it/gomps/http
 HTTP handler integration:
 - `Handler` type - returns (Node, error)
 - `Adapt()` - converts Handler to http.HandlerFunc
@@ -87,8 +87,8 @@ HTTP handler integration:
 ### Simple Element
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 // <div class="container">Hello, World!</div>
@@ -98,8 +98,8 @@ Div(Class("container"), Text("Hello, World!"))
 ### Nested Structure
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 // <nav><a href="/">Home</a><a href="/about">About</a></nav>
@@ -112,9 +112,9 @@ Nav(
 ### Complete Page
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/components"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/components"
+    . "github.com/x07-it/gomps/html"
 )
 
 func Page() Node {
@@ -138,8 +138,8 @@ func Page() Node {
 Create reusable components as functions:
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 func Card(title, content string) Node {
@@ -153,8 +153,8 @@ func Card(title, content string) Node {
 ### Dynamic Rendering
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 func UserList(users []User) Node {
@@ -169,8 +169,8 @@ func UserList(users []User) Node {
 ### Conditional Rendering
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 func NavBar(isLoggedIn bool, username string) Node {
@@ -187,9 +187,9 @@ func NavBar(isLoggedIn bool, username string) Node {
 ### Dynamic Classes
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/components"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/components"
+    . "github.com/x07-it/gomps/html"
 )
 
 Div(
@@ -230,9 +230,9 @@ Img(Src("pic.jpg"), Text("ignored"))
 import (
     "net/http"
     
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
-    ghttp "maragu.dev/gomponents/http"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
+    ghttp "github.com/x07-it/gomps/http"
 )
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) (Node, error) {
@@ -248,8 +248,8 @@ http.HandleFunc("/", ghttp.Adapt(HomeHandler))
 import (
     "net/http"
     
-    . "maragu.dev/gomponents"
-    ghttp "maragu.dev/gomponents/http"
+    . "github.com/x07-it/gomps"
+    ghttp "github.com/x07-it/gomps/http"
 )
 
 type HTTPError struct {
@@ -274,9 +274,9 @@ func Handler(w http.ResponseWriter, r *http.Request) (Node, error) {
 Build complex UIs from simple, reusable components:
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/components"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/components"
+    . "github.com/x07-it/gomps/html"
 )
 
 func Layout(title string, content Node) Node {
@@ -295,8 +295,8 @@ func Layout(title string, content Node) Node {
 Leverage Go's type system for compile-time guarantees:
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 type ButtonVariant string
@@ -351,8 +351,8 @@ func TestButton(t *testing.T) {
 ### Forms
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 func LoginForm() Node {
@@ -371,8 +371,8 @@ func LoginForm() Node {
 ### Tables
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 func DataTable(headers []string, rows [][]string) Node {
@@ -396,8 +396,8 @@ func DataTable(headers []string, rows [][]string) Node {
 ### Lists
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 func NavMenu(items []MenuItem) Node {
@@ -419,8 +419,8 @@ func NavMenu(items []MenuItem) Node {
 Works seamlessly with Tailwind, Bootstrap, etc.:
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 // Tailwind CSS
@@ -439,8 +439,8 @@ Div(Class("container-fluid"),
 Include scripts and handle interactions:
 ```go
 import (
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 Button(
@@ -460,7 +460,7 @@ Script(Raw(`
 For web components or non-standard elements:
 ```go
 import (
-    . "maragu.dev/gomponents"
+    . "github.com/x07-it/gomps"
 )
 
 // <my-component attr="value">Content</my-component>
@@ -478,8 +478,8 @@ All nodes implement String() for debugging:
 import (
     "fmt"
     
-    . "maragu.dev/gomponents"
-    . "maragu.dev/gomponents/html"
+    . "github.com/x07-it/gomps"
+    . "github.com/x07-it/gomps/html"
 )
 
 node := Div(Class("test"), Text("Hello"))

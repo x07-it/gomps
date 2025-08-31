@@ -1,8 +1,8 @@
 package html
 
 import (
-	. "maragu.dev/gomponents"
-	. "maragu.dev/gomponents/html"
+	. "github.com/x07-it/gomps"
+	. "github.com/x07-it/gomps/html"
 )
 
 func HomePage(items []string) Node {

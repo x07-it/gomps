@@ -6,8 +6,8 @@ import (
 	"sort"
 	"strings"
 
-	g "maragu.dev/gomponents"
-	. "maragu.dev/gomponents/html"
+	g "github.com/x07-it/gomps"
+	. "github.com/x07-it/gomps/html"
 )
 
 // HTML5Props for [HTML5].

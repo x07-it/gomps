@@ -3,10 +3,10 @@ package import_test
 import (
 	"testing"
 
-	. "maragu.dev/gomponents"
-	. "maragu.dev/gomponents/components"
-	. "maragu.dev/gomponents/html"
-	. "maragu.dev/gomponents/http"
+	. "github.com/x07-it/gomps"
+	. "github.com/x07-it/gomps/components"
+	. "github.com/x07-it/gomps/html"
+	. "github.com/x07-it/gomps/http"
 )
 
 func TestImports(t *testing.T) {

@@ -3,8 +3,8 @@ package html
 import (
 	"time"
 
-	. "maragu.dev/gomponents"
-	. "maragu.dev/gomponents/html"
+	. "github.com/x07-it/gomps"
+	. "github.com/x07-it/gomps/html"
 )
 
 func AboutPage() Node {

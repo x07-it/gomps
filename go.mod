@@ -1,3 +1,3 @@
-module "maragu.dev/gomponents"
+module "github.com/x07-it/gomps"
 
 go 1.18

@@ -2,10 +2,10 @@
 
 <img src="logo.png" alt="Logo" width="300" align="right">
 
-[![GoDoc](https://pkg.go.dev/badge/maragu.dev/gomponents)](https://pkg.go.dev/maragu.dev/gomponents)
+[![GoDoc](https://pkg.go.dev/badge/github.com/x07-it/gomps)](https://pkg.go.dev/github.com/x07-it/gomps)
 [![CI](https://github.com/maragudk/gomponents/actions/workflows/ci.yml/badge.svg)](https://github.com/maragudk/gomponents/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/maragudk/gomponents/branch/main/graph/badge.svg)](https://codecov.io/gh/maragudk/gomponents)
-[![Go Report Card](https://goreportcard.com/badge/maragu.dev/gomponents)](https://goreportcard.com/report/maragu.dev/gomponents)
+[![Go Report Card](https://goreportcard.com/badge/github.com/x07-it/gomps)](https://goreportcard.com/report/github.com/x07-it/gomps)
 
 Try HTML components in pure Go.
 
@@ -14,7 +14,7 @@ They render to HTML 5, and make it easy for you to build reusable components.
 So you can focus on building your app instead of learning yet another templating language.
 
 ```shell
-go get maragu.dev/gomponents
+go get github.com/x07-it/gomps
 ```
 
 Made with ✨sparkles✨ by [maragu](https://www.maragu.dev/): independent software consulting for cloud-native Go apps & AI engineering.
@@ -43,16 +43,16 @@ Check out [www.gomponents.com](https://www.gomponents.com) for an introduction.
 ## Usage
 
 ```shell
-go get maragu.dev/gomponents
+go get github.com/x07-it/gomps
 ```
 
 ```go
 package main
 
 import (
-	. "maragu.dev/gomponents"
-	. "maragu.dev/gomponents/components"
-	. "maragu.dev/gomponents/html"
+	. "github.com/x07-it/gomps"
+	. "github.com/x07-it/gomps/components"
+	. "github.com/x07-it/gomps/html"
 )
 
 func Navbar(authenticated bool, currentPath string) Node {
@@ -164,9 +164,9 @@ In either case, the less-used variant also exists in the codebase:
 package html
 
 import (
-	. "maragu.dev/gomponents"
-	. "maragu.dev/gomponents/components"
-	. "maragu.dev/gomponents/html"
+	. "github.com/x07-it/gomps"
+	. "github.com/x07-it/gomps/components"
+	. "github.com/x07-it/gomps/html"
 )
 
 func MyPage() Node {

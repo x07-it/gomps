@@ -3,8 +3,8 @@ package http
 import (
 	"net/http"
 
-	. "maragu.dev/gomponents"
-	ghttp "maragu.dev/gomponents/http"
+	. "github.com/x07-it/gomps"
+	ghttp "github.com/x07-it/gomps/http"
 
 	"app/html"
 )

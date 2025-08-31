@@ -6,10 +6,10 @@ import (
 	"os"
 	"testing"
 
-	g "maragu.dev/gomponents"
-	. "maragu.dev/gomponents/components"
-	. "maragu.dev/gomponents/html"
-	"maragu.dev/gomponents/internal/assert"
+	g "github.com/x07-it/gomps"
+	. "github.com/x07-it/gomps/components"
+	. "github.com/x07-it/gomps/html"
+	"github.com/x07-it/gomps/internal/assert"
 )
 
 func TestHTML5(t *testing.T) {
