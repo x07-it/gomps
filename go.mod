@@ -1,3 +1,3 @@
-module "github.com/x07-it/gomps"
+module github.com/x07-it/gomps
 
-go 1.18
+go 1.25

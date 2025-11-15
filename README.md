@@ -17,7 +17,7 @@ So you can focus on building your app instead of learning yet another templating
 go get github.com/x07-it/gomps
 ```
 
-Made with ✨sparkles✨ by [maragu](https://www.maragu.dev/): independent software consulting for cloud-native Go apps & AI engineering.
+Made with ✨sparkles✨ by [maragu](https://www.x07.it/): independent software consulting for cloud-native Go apps & AI engineering.
 
 [Contact me at markus@maragu.dk](mailto:markus@maragu.dk) for consulting work, or perhaps an invoice to support this project?
 
